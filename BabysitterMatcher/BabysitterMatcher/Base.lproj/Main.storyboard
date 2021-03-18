@@ -21,8 +21,8 @@
                         <segue destination="SDd-lV-pwb" kind="relationship" relationship="viewControllers" id="45C-EC-6JJ"/>
                         <segue destination="2eO-Ts-ZiC" kind="relationship" relationship="viewControllers" id="bQ6-OU-a4H"/>
                         <segue destination="762-TI-7SV" kind="relationship" relationship="viewControllers" id="0wk-7o-9P0"/>
-                        <segue destination="mAB-CR-bVm" kind="relationship" relationship="viewControllers" id="IQL-Ol-j4q"/>
                         <segue destination="aYA-ai-STn" kind="relationship" relationship="viewControllers" id="cNC-vm-dwp"/>
+                        <segue destination="mAB-CR-bVm" kind="relationship" relationship="viewControllers" id="Uhc-CR-zMs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PbT-01-dq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="-146" y="1107"/>
         </scene>
-        <!--MemberAndBabysitter-->
+        <!--Member-->
         <scene sceneID="KNF-KV-W0e">
             <objects>
-                <viewControllerPlaceholder storyboardName="MemberAndBabysitter" id="mAB-CR-bVm" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Member" id="mAB-CR-bVm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="GW8-FG-pbD"/>
                     <navigationItem key="navigationItem" id="unG-NG-YPt"/>
                 </viewControllerPlaceholder>
