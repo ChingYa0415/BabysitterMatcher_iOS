@@ -1,21 +1,20 @@
 //
-//  ForumTableViewController.swift
+//  RequirementFormTVC.swift
 //  BabysitterMatcher
 //
-//  Created by Angus on 2021/3/15.
+//  Created by Angus on 2021/3/18.
 //
 
 import UIKit
 
-class ForumTVC: UITableViewController {
+class RequirementFormTVC: UITableViewController {
     let url_server = URL(string: common_url + "Homepage")
-    var postList = [Post]()
+    var requirementFormList = [RequirementForm]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
         
         var requestParam = [String: String]()
-        requestParam["action"] =  "getAllPost"
+        requestParam["action"] =  "getAllRequirementForm"
         
         executeTask(url_server!, requestParam) { (data, respond, error) in
             let decoder = JSONDecoder()
@@ -26,8 +25,8 @@ class ForumTVC: UITableViewController {
                 if data != nil {
                     print("input \(String(data: data!, encoding: .utf8)!)")
                     
-                    if let result = try? decoder.decode([Post].self, from: data!) {
-                        self.postList = result
+                    if let result = try? decoder.decode([RequirementForm].self, from: data!) {
+                        self.requirementFormList = result
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
@@ -37,27 +36,58 @@ class ForumTVC: UITableViewController {
                 print(error!.localizedDescription)
             }
         }
+        
+        self.tableView.reloadData()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        var requestParam = [String: String]()
+        requestParam["action"] =  "getAllRequirementForm"
+        
+        executeTask(url_server!, requestParam) { (data, respond, error) in
+            let decoder = JSONDecoder()
+            let format = DateFormatter()
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            decoder.dateDecodingStrategy = .formatted(format)
+            if error == nil {
+                if data != nil {
+                    print("input \(String(data: data!, encoding: .utf8)!)")
+                    
+                    if let result = try? decoder.decode([RequirementForm].self, from: data!) {
+                        self.requirementFormList = result
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+        
+    }
+
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let hide = UIContextualAction(style: .normal, title: "隱藏") { (action, view, bool) in
-            let post = self.postList[indexPath.row]
-            let alert = UIAlertController(title: "隱藏此貼文", message: "確認將此貼文隱藏嗎？", preferredStyle: .alert)
+            let requirementForm = self.requirementFormList[indexPath.row]
+            let alert = UIAlertController(title: "隱藏此需求單", message: "確認將此需求單隱藏嗎？", preferredStyle: .alert)
             
             let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
             let confirm = UIAlertAction(title: "確認", style: .default) { (alertAction) in
-                if let postId = post.post_id {
+                if let requirementFormId = requirementForm.id {
                     var requestParam = [String: Any]()
-                    requestParam["action"] = "hideForumStatus"
-                    requestParam["postId"] = postId
+                    requestParam["action"] = "hideRequirementFormStatus"
+                    requestParam["requirementFormId"] = requirementFormId
                     executeTask(self.url_server!, requestParam) { (data, response, error) in
                         if error == nil {
                             if data != nil {
                                 print("input: \(String(data: data!, encoding: .utf8)!)")
                                 if let result = try? JSONDecoder().decode(Int.self, from: data!) {
-                                    print("resultHideForumStatus: \(result)")
-                                    post.status = result
+                                    print("resultHideRequirementFormStatus: \(result)")
+                                    requirementForm.status = result
                                     DispatchQueue.main.async {
                                         if let control = self.tableView.refreshControl {
                                             if control.isRefreshing {
@@ -80,22 +110,21 @@ class ForumTVC: UITableViewController {
         hide.backgroundColor = .lightGray
         
         let show = UIContextualAction(style: .normal, title: "顯示") { (action, view, bool) in
-            let post = self.postList[indexPath.row]
-            let alert = UIAlertController(title: "顯示此貼文", message: "確認將此貼文顯示嗎？", preferredStyle: .alert)
-            
+            let requirement = self.requirementFormList[indexPath.row]
+            let alert = UIAlertController(title: "顯示此需求單", message: "確認將此需求單顯示嗎？", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
             let confirm = UIAlertAction(title: "確認", style: .default) {(alertAction) in
-                if let postId = post.post_id {
+                if let requirementFormId = requirement.id {
                     var requestParam = [String: Any]()
-                    requestParam["action"] = "showForumStatus"
-                    requestParam["postId"] = postId
+                    requestParam["action"] = "showRequirementFormStatus"
+                    requestParam["requirementFormId"] = requirementFormId
                     executeTask(self.url_server!, requestParam) { (data, response, error) in
                         if error == nil {
                             if data != nil {
                                 print("input: \(String(data: data!, encoding: .utf8)!)")
                                 if let result = try? JSONDecoder().decode(Int.self, from: data!) {
-                                    print("resultShowForumStatus: \(result)")
-                                    post.status = result
+                                    print("resultShowRequirementFormStatus: \(result)")
+                                    requirement.status = result
                                     DispatchQueue.main.async {
                                         if let control = self.tableView.refreshControl {
                                             if control.isRefreshing {
@@ -124,45 +153,14 @@ class ForumTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellId = "ForumTableViewCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! ForumCell
+        let cellId = "RequirementFormCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! RequirementFormCell
         
-        let post = postList[indexPath.row]
-        
+        let requirementForm = requirementFormList[indexPath.row]
+    
         var requestParam = [String: Any]()
-        requestParam["action"] = "getForumReplyCount"
-        requestParam["postId"] = post.post_id
-        executeTask(url_server!, requestParam) { (data, response, error) in
-            if error == nil {
-                if data != nil {
-                    print("input: \(String(data: data!, encoding: .utf8)!)")
-                    if let result = try? JSONDecoder().decode(Int.self, from: data!) {
-                        print("resultReplyCount: \(result)")
-                        DispatchQueue.main.async {
-                            cell.lbReplyCount.text = String(result)
-                        }                        
-                    }
-                }
-            }
-        }
-        
-        requestParam["action"] = "getForumPostDate"
-        executeTask(url_server!, requestParam) { (data, response, error) in
-            if error == nil {
-                if data != nil {
-                    print("input: \(String(data: data!, encoding: .utf8)!)")
-                    if let result = try? JSONDecoder().decode(String.self, from: data!) {
-                        print("resultDate: \(result)")
-                        DispatchQueue.main.async {
-                            cell.lbDate.text = result
-                        }
-                    }
-                }
-            }
-        }
-        
         requestParam["action"] = "getMemberNickname"
-        requestParam["memberId"] = post.member_id
+        requestParam["memberId"] = requirementForm.member_id
         executeTask(url_server!, requestParam) { (data, response, error) in
             if error == nil {
                 if data != nil {
@@ -170,26 +168,22 @@ class ForumTVC: UITableViewController {
                     if let result = try? JSONDecoder().decode(String.self, from: data!) {
                         print("resultNickname: \(result)")
                         DispatchQueue.main.async {
-                            cell.lbNickname.text = result
+                            cell.lbMemberNickname.text = result
                         }
                     }
                 }
             }
         }
         
-        if let status = post.status {
+        if let status = requirementForm.visibility {
             if status == 1 {
-                cell.lbStatus.text = "正常"
+                cell.lbVisibility.text = "正常"
             } else {
-                cell.lbStatus.text = "隱藏"
+                cell.lbVisibility.text = "隱藏"
             }
         }
         
-        cell.lbTitle.text = post.title
-        cell.lbType.text = post.type
-        cell.lbDate.text = post.dataStr
-        cell.lbContent.text = post.content
-        cell.lbLikeCount.text = String(post.like_count!)
+        cell.lbRequirementFormId.text = String(requirementForm.id!)
         return cell
     }
    
@@ -198,15 +192,17 @@ class ForumTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postList.count
+        return requirementFormList.count
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PostReviewSegue" {
+        if segue.identifier == "RequirementFormVCSegue" {
             let indexPath = self.tableView.indexPathForSelectedRow
-            let post = postList[indexPath!.row]
-            let postViewVC = segue.destination as! PostReviewVC
-            postViewVC.post = post
+            let requirementForm = requirementFormList[indexPath!.row]
+            let requirementFormVC = segue.destination as! RequirementFormVC
+            requirementFormVC.requirementForm = requirementForm
         }
     }
+    
+
 }

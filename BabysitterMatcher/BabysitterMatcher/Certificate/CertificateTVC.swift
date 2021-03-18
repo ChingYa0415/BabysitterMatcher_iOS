@@ -6,84 +6,173 @@
 //
 
 import UIKit
+import Foundation
 
 class CertificateTVC: UITableViewController {
-
+    let url_server = URL(string: common_url + "Homepage")
+    var certificateList = [Certificate]()
+    var imageData: Data?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        var requestParam = [String: String]()
+        requestParam["action"] =  "getAllCertificate"
+        executeTask(url_server!, requestParam) { (data, respond, error) in
+            let decoder = JSONDecoder()
+            let format = DateFormatter()
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            decoder.dateDecodingStrategy = .formatted(format)
+            if error == nil {
+                if data != nil {
+                    print("input \(String(data: data!, encoding: .utf8)!)")
+                    
+                    if let result = try? decoder.decode([Certificate].self, from: data!) {
+                        self.certificateList = result
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+        self.tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        var requestParam = [String: String]()
+        requestParam["action"] =  "getAllCertificate"
+        executeTask(url_server!, requestParam) { (data, respond, error) in
+            let decoder = JSONDecoder()
+            let format = DateFormatter()
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            decoder.dateDecodingStrategy = .formatted(format)
+            if error == nil {
+                if data != nil {
+                    print("input \(String(data: data!, encoding: .utf8)!)")
+                    
+                    if let result = try? decoder.decode([Certificate].self, from: data!) {
+                        self.certificateList = result
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
     }
 
-    // MARK: - Table view data source
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellId = "CertificateTableViewCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! CertificateCell
+        
+        let certificate = certificateList[indexPath.row]
+        var requestParam = [String: Any]()
+        
+        requestParam["action"] = "getMemberStatus"
+        requestParam["memberId"] = certificate.member_id
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    print("input: \(String(data: data!, encoding: .utf8)!)")
+                    if let result = try? JSONDecoder().decode(Int.self, from: data!) {
+                        print("resultName: \(result)")
+                                     
+                        var status: String?
+                        
+                        if result == 6 {
+                            status = "審核中保母"
+                        } else if result == 3 {
+                            status = "保母"
+                        } else if result == 2 {
+                            status = "一般"
+                        }
+                        print("status: \(String(describing: status))")
+                        
+                        DispatchQueue.main.async {
+                            cell.lbStatus.text = status!
+                        }
+                    }
+                }
+            }
+        }
+        
+        requestParam["action"] = "getCertificateImage"
+        requestParam["certificateId"] = certificate.id
+        requestParam["imageSize"] = cell.ivCertificate.frame.height
+        var image: UIImage?
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    image = UIImage(data: data!)
+                }
+                if image == nil {
+                    image = UIImage(named: "noImage.jpg")
+                }
+                DispatchQueue.main.async {
+                    cell.ivCertificate.image = image
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+        
+        requestParam["action"] = "getMemberNickname"
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    print("input: \(String(data: data!, encoding: .utf8)!)")
+                    if let result = try? JSONDecoder().decode(String.self, from: data!) {
+                        print("resultNickname: \(result)")
+                        DispatchQueue.main.async {
+                            cell.lbMemberNickname.text = result
+                        }
+                    }
+                }
+            }
+        }
+
+        requestParam["action"] = "getMemberBabysitterName"
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    print("input: \(String(data: data!, encoding: .utf8)!)")
+                    if let result = try? JSONDecoder().decode(String.self, from: data!) {
+                        print("resultName: \(result)")
+                        DispatchQueue.main.async {
+                            cell.lbBabysitterName.text = result
+                        }
+                    }
+                }
+            }
+        }
+        
+        return cell
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return certificateList.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "CertificateSegue" {
+            let indexPath = self.tableView.indexPathForSelectedRow
+            let certificate = certificateList[indexPath!.row]
+            let certificateVC = segue.destination as! CertificateVC
+            certificateVC.certificate = certificate
+            print("certificateVC.certificate      \(String(describing: certificateVC.certificate))")
+            print("certificateVC.certificate?.member_id     \(String(describing: certificateVC.certificate?.member_id))")
+            
+            
+        }
     }
-    */
-
 }
