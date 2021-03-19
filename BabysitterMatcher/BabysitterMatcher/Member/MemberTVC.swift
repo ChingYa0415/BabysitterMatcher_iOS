@@ -15,10 +15,78 @@ class MemberTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var requestParam = [String: String]()
+        requestParam["action"] = "getAllMember"
+        
+        executeTask(url_server!, requestParam) { (data, respond, error) in
+            let decoder = JSONDecoder()
+            let format = DateFormatter()
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            decoder.dateDecodingStrategy = .formatted(format)
+            if error == nil {
+                if data != nil {
+                    print("input \(String(data: data!, encoding: .utf8)!)")
+                    
+                    if let result = try? decoder.decode([Member].self, from: data!) {
+                        self.memberList = result
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
         
     }
 
-    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellId = "MemberCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! MemberCell
+        
+        let member = memberList[indexPath.row]
+        
+        var requestParam = [String: Any]()
+
+        requestParam["action"] = "getMemberRegisterDate"
+        requestParam["memberId"] = member.id
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    print("input: \(String(data: data!, encoding: .utf8)!)")
+                    if let result = try? JSONDecoder().decode(String.self, from: data!) {
+                        print("resultNickname: \(result)")
+                        DispatchQueue.main.async {
+                            cell.lbRegisterDate.text = result
+                        }
+                    }
+                }
+            }
+        }
+        
+        requestParam["action"] = "getMemberImage"
+        requestParam["imageSize"] = cell.ivMember.frame.height
+        var image: UIImage?
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    image = UIImage(data: data!)
+                }
+                if image == nil {
+                    image = UIImage(named: "noImage.jpg")
+                }
+                DispatchQueue.main.async {
+                    cell.ivMember.image = image
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        
+        }
+        
+        return cell
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -28,6 +96,13 @@ class MemberTVC: UITableViewController {
         return memberList.count
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MemberSegue" {
+            let indexPath = self.tableView.indexPathForSelectedRow
+            let member = memberList[indexPath!.row]
+            let memberVC = segue.destination as! MemberVC
+            memberVC.member = member
+        }
+    }
 
 }

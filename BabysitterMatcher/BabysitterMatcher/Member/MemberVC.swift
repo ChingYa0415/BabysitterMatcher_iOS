@@ -9,6 +9,8 @@ import UIKit
 
 class MemberVC: UIViewController {
 
+    var member: Member!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

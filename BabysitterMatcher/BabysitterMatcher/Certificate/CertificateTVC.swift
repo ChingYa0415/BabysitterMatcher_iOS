@@ -11,7 +11,6 @@ import Foundation
 class CertificateTVC: UITableViewController {
     let url_server = URL(string: common_url + "Homepage")
     var certificateList = [Certificate]()
-    var imageData: Data?
     
     override func viewWillAppear(_ animated: Bool) {
         

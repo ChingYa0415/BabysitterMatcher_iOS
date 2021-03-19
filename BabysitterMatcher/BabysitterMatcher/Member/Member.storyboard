@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="zv7-3O-UvR" customClass="MemberCell" customModule="BabysitterMatcher" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberCell" rowHeight="106" id="zv7-3O-UvR" customClass="MemberCell" customModule="BabysitterMatcher" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zv7-3O-UvR" id="psQ-cy-h21">
@@ -56,7 +56,7 @@
                                     <outlet property="lbAccount" destination="aii-PU-Woo" id="NyN-ET-Dns"/>
                                     <outlet property="lbNickname" destination="Fxz-mY-9mI" id="gZ2-M8-yAj"/>
                                     <outlet property="lbRegisterDate" destination="XCz-NB-dMz" id="gRz-xf-H9x"/>
-                                    <segue destination="Z9X-nL-kc7" kind="show" id="pw8-2R-t8K"/>
+                                    <segue destination="Z9X-nL-kc7" kind="show" identifier="MemberSegue" id="pw8-2R-t8K"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="1269.5652173913045" y="2353.7946428571427"/>
         </scene>
-        <!--View Controller-->
+        <!--MemberVC-->
         <scene sceneID="HI9-hj-Jqc">
             <objects>
-                <viewController id="Z9X-nL-kc7" sceneMemberID="viewController">
+                <viewController id="Z9X-nL-kc7" customClass="MemberVC" customModule="BabysitterMatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="48y-0I-vGd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
