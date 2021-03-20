@@ -24,35 +24,69 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="狀態" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYP-mu-BL0">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="狀態" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYP-mu-BL0">
                                             <rect key="frame" x="20" y="11" width="45" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="45" id="4pI-oI-Pp9"/>
+                                                <constraint firstAttribute="height" constant="27" id="qP1-Vz-4p3"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="請求單" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNv-hJ-17u">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請求單" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNv-hJ-17u">
                                             <rect key="frame" x="20" y="46" width="52" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="EtW-Fz-mHe"/>
+                                                <constraint firstAttribute="width" constant="52" id="ipb-qG-ye3"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMw-YZ-hJU">
-                                            <rect key="frame" x="80" y="46" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMw-YZ-hJU">
+                                            <rect key="frame" x="80" y="46" width="314" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="1xy-xF-o5M"/>
+                                                <constraint firstAttribute="width" constant="314" id="U2w-z6-Nf0"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="會員暱稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fef-HY-9QH">
-                                            <rect key="frame" x="20" y="75" width="70" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="會員暱稱：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fux-ex-7uP">
+                                            <rect key="frame" x="20" y="75" width="87" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Xll-f9-WJe"/>
+                                                <constraint firstAttribute="width" constant="87" id="iQA-y7-F6C"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="會員暱稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fef-HY-9QH">
+                                            <rect key="frame" x="115" y="75" width="279" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="5vY-AG-r8v"/>
+                                                <constraint firstAttribute="width" constant="279" id="pNJ-1B-wrE"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fef-HY-9QH" firstAttribute="top" secondItem="nMw-YZ-hJU" secondAttribute="bottom" constant="8" symbolic="YES" id="1TX-eh-zLt"/>
+                                        <constraint firstItem="fux-ex-7uP" firstAttribute="top" secondItem="TNv-hJ-17u" secondAttribute="bottom" constant="8" symbolic="YES" id="2WA-wT-JDG"/>
+                                        <constraint firstItem="xYP-mu-BL0" firstAttribute="top" secondItem="DYn-wg-H5J" secondAttribute="topMargin" id="3X9-l1-myI"/>
+                                        <constraint firstItem="TNv-hJ-17u" firstAttribute="leading" secondItem="DYn-wg-H5J" secondAttribute="leadingMargin" id="7Is-Gn-7wb"/>
+                                        <constraint firstItem="nMw-YZ-hJU" firstAttribute="top" secondItem="DYn-wg-H5J" secondAttribute="topMargin" constant="35" id="Dd0-61-RTB"/>
+                                        <constraint firstItem="fux-ex-7uP" firstAttribute="leading" secondItem="DYn-wg-H5J" secondAttribute="leadingMargin" id="Gds-wT-aTY"/>
+                                        <constraint firstItem="fef-HY-9QH" firstAttribute="leading" secondItem="fux-ex-7uP" secondAttribute="trailing" constant="8" symbolic="YES" id="HcV-h3-pmg"/>
+                                        <constraint firstItem="TNv-hJ-17u" firstAttribute="top" secondItem="xYP-mu-BL0" secondAttribute="bottom" constant="8" symbolic="YES" id="I1s-YR-Fxv"/>
+                                        <constraint firstItem="xYP-mu-BL0" firstAttribute="leading" secondItem="DYn-wg-H5J" secondAttribute="leadingMargin" id="PzC-BU-JWo"/>
+                                        <constraint firstItem="nMw-YZ-hJU" firstAttribute="leading" secondItem="TNv-hJ-17u" secondAttribute="trailing" constant="8" symbolic="YES" id="WKn-En-HUS"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="lbMemberNickname" destination="fef-HY-9QH" id="z2l-Dg-8ai"/>
@@ -67,7 +101,7 @@
                             <outlet property="delegate" destination="cCe-Fb-7UZ" id="mwn-kP-boU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="sPS-8r-g0K"/>
+                    <navigationItem key="navigationItem" title="請求單" id="sPS-8r-g0K"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMl-x9-q4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

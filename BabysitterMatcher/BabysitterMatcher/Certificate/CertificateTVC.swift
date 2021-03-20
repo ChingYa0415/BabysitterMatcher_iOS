@@ -87,9 +87,9 @@ class CertificateTVC: UITableViewController {
                         if result == 6 {
                             status = "審核中保母"
                         } else if result == 3 {
-                            status = "保母"
+                            status = "保母會員"
                         } else if result == 2 {
-                            status = "一般"
+                            status = "一般會員"
                         }
                         print("status: \(String(describing: status))")
                         

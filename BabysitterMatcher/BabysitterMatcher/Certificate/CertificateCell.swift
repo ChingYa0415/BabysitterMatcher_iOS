@@ -8,11 +8,13 @@
 import UIKit
 
 class CertificateCell: UITableViewCell {
-
+   
+    @IBOutlet weak var lbStatus: UILabel!
     @IBOutlet weak var ivCertificate: UIImageView!
     @IBOutlet weak var lbMemberNickname: UILabel!
     @IBOutlet weak var lbBabysitterName: UILabel!
-    @IBOutlet weak var lbStatus: UILabel!
+    @IBOutlet weak var lbRegisterDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

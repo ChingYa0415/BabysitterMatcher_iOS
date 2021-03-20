@@ -9,10 +9,12 @@ import UIKit
 
 class MemberCell: UITableViewCell {
 
+    @IBOutlet weak var lbStatus: UILabel!
     @IBOutlet weak var ivMember: UIImageView!
     @IBOutlet weak var lbAccount: UILabel!
     @IBOutlet weak var lbNickname: UILabel!
     @IBOutlet weak var lbRegisterDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

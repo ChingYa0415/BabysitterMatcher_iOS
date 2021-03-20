@@ -20,9 +20,11 @@ class RequirementFormVC: UIViewController {
     @IBOutlet weak var lbCharge: UILabel!
     @IBAction func btShow(_ sender: Any) {
         showRequirementFormStatus()
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btHide(_ sender: Any) {
         hideRequirementFormStatus()
+        self.navigationController?.popViewController(animated: true)
     }
     
     

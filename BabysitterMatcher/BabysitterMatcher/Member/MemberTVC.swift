@@ -16,8 +16,7 @@ class MemberTVC: UITableViewController {
         super.viewDidLoad()
 
         var requestParam = [String: String]()
-        requestParam["action"] = "getAllMember"
-        
+        requestParam["action"] = "getAllMembers"
         executeTask(url_server!, requestParam) { (data, respond, error) in
             let decoder = JSONDecoder()
             let format = DateFormatter()
@@ -38,7 +37,6 @@ class MemberTVC: UITableViewController {
                 print(error!.localizedDescription)
             }
         }
-        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,8 +47,16 @@ class MemberTVC: UITableViewController {
         
         var requestParam = [String: Any]()
 
+        cell.lbAccount.text = member.account
+        cell.lbNickname.text = member.nickname
+        if member.status == 2 {
+            cell.lbStatus.text = "一般會員"
+        } else if member.status == 3 {
+            cell.lbStatus.text = "保母會員"
+        }
+        
         requestParam["action"] = "getMemberRegisterDate"
-        requestParam["memberId"] = member.id
+        requestParam["id"] = member.id
         executeTask(url_server!, requestParam) { (data, response, error) in
             if error == nil {
                 if data != nil {

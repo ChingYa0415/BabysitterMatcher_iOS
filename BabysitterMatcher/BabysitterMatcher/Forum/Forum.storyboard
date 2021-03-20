@@ -162,7 +162,7 @@
                             <outlet property="delegate" destination="CXX-gs-mSb" id="iiY-Iz-ELU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="9TZ-Qq-eWP"/>
+                    <navigationItem key="navigationItem" title="文章" id="9TZ-Qq-eWP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKp-tb-5LF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

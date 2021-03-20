@@ -69,6 +69,7 @@ class RequirementFormTVC: UITableViewController {
         
     }
 
+    /*
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let hide = UIContextualAction(style: .normal, title: "隱藏") { (action, view, bool) in
@@ -151,7 +152,8 @@ class RequirementFormTVC: UITableViewController {
         swipeActions.performsFirstActionWithFullSwipe = false
         return swipeActions
     }
-
+    */
+ 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "RequirementFormCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! RequirementFormCell

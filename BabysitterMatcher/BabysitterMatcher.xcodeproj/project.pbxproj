@@ -11,7 +11,6 @@
 		2412F0A825FF50A40031EF88 /* RequirementForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2412F0A725FF50A40031EF88 /* RequirementForm.storyboard */; };
 		2412F0AC25FF50C50031EF88 /* Certificate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2412F0AB25FF50C50031EF88 /* Certificate.storyboard */; };
 		2412F0B025FF50EC0031EF88 /* Member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2412F0AF25FF50EC0031EF88 /* Member.storyboard */; };
-		2412F0B425FF51000031EF88 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2412F0B325FF51000031EF88 /* Setting.storyboard */; };
 		2412F0B925FF5D1B0031EF88 /* ForumTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2412F0B825FF5D1B0031EF88 /* ForumTVC.swift */; };
 		2412F0BC25FF5F080031EF88 /* ForumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2412F0BB25FF5F080031EF88 /* ForumCell.swift */; };
 		2412F0C325FF71FA0031EF88 /* PostReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2412F0C225FF71FA0031EF88 /* PostReviewCell.swift */; };
@@ -46,7 +45,6 @@
 		2412F0A725FF50A40031EF88 /* RequirementForm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RequirementForm.storyboard; sourceTree = "<group>"; };
 		2412F0AB25FF50C50031EF88 /* Certificate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Certificate.storyboard; sourceTree = "<group>"; };
 		2412F0AF25FF50EC0031EF88 /* Member.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Member.storyboard; sourceTree = "<group>"; };
-		2412F0B325FF51000031EF88 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		2412F0B825FF5D1B0031EF88 /* ForumTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumTVC.swift; sourceTree = "<group>"; };
 		2412F0BB25FF5F080031EF88 /* ForumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumCell.swift; sourceTree = "<group>"; };
 		2412F0C225FF71FA0031EF88 /* PostReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReviewCell.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				24D8A8A025FF8741006FA7DF /* Bean */,
 				24D8A89F25FF82BF006FA7DF /* Common */,
 				2462F94425FF4C9F00D7DE0F /* Member */,
-				2462F94325FF4C9400D7DE0F /* Setting */,
 				2462F94225FF4C7F00D7DE0F /* Certificate */,
 				2462F94125FF4BEF00D7DE0F /* RequirementForm */,
 				2462F94025FF4BDD00D7DE0F /* Forum */,
@@ -158,14 +155,6 @@
 				243982602601DEAD0081C99B /* CertificateVC.swift */,
 			);
 			path = Certificate;
-			sourceTree = "<group>";
-		};
-		2462F94325FF4C9400D7DE0F /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				2412F0B325FF51000031EF88 /* Setting.storyboard */,
-			);
-			path = Setting;
 			sourceTree = "<group>";
 		};
 		2462F94425FF4C9F00D7DE0F /* Member */ = {
@@ -265,7 +254,6 @@
 				2412F0AC25FF50C50031EF88 /* Certificate.storyboard in Resources */,
 				244CA38825FF3A1800FDFD3F /* Main.storyboard in Resources */,
 				2412F0B025FF50EC0031EF88 /* Member.storyboard in Resources */,
-				2412F0B425FF51000031EF88 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
