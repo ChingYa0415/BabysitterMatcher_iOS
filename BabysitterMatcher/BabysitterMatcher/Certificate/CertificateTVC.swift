@@ -24,7 +24,7 @@ class CertificateTVC: UITableViewController {
             if error == nil {
                 if data != nil {
                     print("input \(String(data: data!, encoding: .utf8)!)")
-                    
+
                     if let result = try? decoder.decode([Certificate].self, from: data!) {
                         self.certificateList = result
                         DispatchQueue.main.async {
@@ -52,7 +52,7 @@ class CertificateTVC: UITableViewController {
             if error == nil {
                 if data != nil {
                     print("input \(String(data: data!, encoding: .utf8)!)")
-                    
+
                     if let result = try? decoder.decode([Certificate].self, from: data!) {
                         self.certificateList = result
                         DispatchQueue.main.async {
@@ -80,17 +80,22 @@ class CertificateTVC: UITableViewController {
                 if data != nil {
                     print("input: \(String(data: data!, encoding: .utf8)!)")
                     if let result = try? JSONDecoder().decode(Int.self, from: data!) {
-                        print("resultName: \(result)")
+                        print("resultMemberStatus: \(result)")
                                      
                         var status: String?
                         
-                        if result == 6 {
-                            status = "審核中保母"
-                        } else if result == 3 {
-                            status = "保母會員"
+                        if result == 1 {
+                            status = "未啟用"
                         } else if result == 2 {
                             status = "一般會員"
+                        } else if result == 3 {
+                            status = "保母會員"
+                        } else if result == 5 {
+                            status = "停權"
+                        } else if result == 6 {
+                            status = "審核中保母"
                         }
+                        
                         print("status: \(String(describing: status))")
                         
                         DispatchQueue.main.async {
@@ -127,7 +132,7 @@ class CertificateTVC: UITableViewController {
                 if data != nil {
                     print("input: \(String(data: data!, encoding: .utf8)!)")
                     if let result = try? JSONDecoder().decode(String.self, from: data!) {
-                        print("resultNickname: \(result)")
+                        print("resultMemberNickname: \(result)")
                         DispatchQueue.main.async {
                             cell.lbMemberNickname.text = result
                         }
@@ -142,9 +147,24 @@ class CertificateTVC: UITableViewController {
                 if data != nil {
                     print("input: \(String(data: data!, encoding: .utf8)!)")
                     if let result = try? JSONDecoder().decode(String.self, from: data!) {
-                        print("resultName: \(result)")
+                        print("resultMemberBabysitterName: \(result)")
                         DispatchQueue.main.async {
                             cell.lbBabysitterName.text = result
+                        }
+                    }
+                }
+            }
+        }
+        
+        requestParam["action"] = "getCertificateUploadDate"
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    print("input: \(String(data: data!, encoding: .utf8)!)")
+                    if let result = try? JSONDecoder().decode(String.self, from: data!) {
+                        print("resultCertificateUploadDate: \(result)")
+                        DispatchQueue.main.async {
+                            cell.lbRegisterDate.text = result
                         }
                     }
                 }

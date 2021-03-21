@@ -16,53 +16,84 @@ class MemberVC: UIViewController {
     @IBOutlet weak var lbMemberForumCount: UILabel!
     @IBOutlet weak var lbMemberReplyCount: UILabel!
     @IBAction func btToNormal(_ sender: Any) {
-        changeStatusToNormal()
+        changeStatus(type: 2)
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btToSuspension(_ sender: Any) {
-        changeStatusToSuspension()
+        changeStatus(type: 5)
+        self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func change(_ sender: UISegmentedControl) {
-        for containerView in MemberAndBabysitter {
-              containerView.isHidden = true
-           }
-        MemberAndBabysitter[sender.selectedSegmentIndex].isHidden = false
-    }
-    @IBOutlet var MemberAndBabysitter: [UIView]!
     
     let url_server = URL(string: common_url + "Homepage")
-    var member: Member!
+    var member: Member?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MemberAndBabysitter[0].isHidden = false
-        MemberAndBabysitter[1].isHidden = true
+        
+        self.lbMemberAccount.text = member?.account
+        self.lbMemberNickname.text = member?.nickname
         
         var requestParam = [String: Any]()
         
-        requestParam["action"] = "getMemberForumAndReplyCount"
-        requestParam["memberId"] = member.id
+        requestParam["action"] = "getMemberImage"
+        requestParam["imageSize"] = self.ivMember.frame.height
+        requestParam["id"] = member?.id
+        var image: UIImage?
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    image = UIImage(data: data!)
+                }
+                if image == nil {
+                    image = UIImage(named: "noImage.jpg")
+                }
+                DispatchQueue.main.async {
+                    self.ivMember.image = image
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        
+        }
+        
+        requestParam["action"] = "getMemberRegisterDate"
         executeTask(url_server!, requestParam) { (data, response, error) in
             if error == nil {
                 if data != nil {
                     print("input: \(String(data: data!, encoding: .utf8)!)")
-                    if let result = try? JSONDecoder().decode([String].self, from: data!) {
-                        print("resultMemberForumAndReplyCount: \(result)")
+                    if let result = try? JSONDecoder().decode(String.self, from: data!) {
+                        print("resultMemberRegisterDate: \(result)")
                         DispatchQueue.main.async {
-                            self.lbMemberForumCount.text = result[0]
-                            self.lbMemberReplyCount.text = result[1]
+                            self.lbMemberRegisterDate.text = result
                         }
                     }
                 }
             }
         }
         
+        requestParam["action"] = "getMemberForumAndReplyCount"
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    print("input: \(String(data: data!, encoding: .utf8)!)")
+                    if let result = try? JSONDecoder().decode([Int].self, from: data!) {
+                        print("resultMemberForumAndReplyCount: \(result)")
+                        DispatchQueue.main.async {
+                            self.lbMemberForumCount.text = String(result[0])
+                            self.lbMemberReplyCount.text = String(result[1])
+                        }
+                    }
+                }
+            }
+        }
     }
     
-    func changeStatusToNormal() {
+    func changeStatus(type: Int) {
         var requestParam = [String: Any]()
         
-        requestParam["action"] = "setMemberToNormal"
-        requestParam["memberId"] = member.id
+        requestParam["action"] = "setMemberStatus"
+        requestParam["memberId"] = member?.id
+        requestParam["type"] = type
         executeTask(url_server!, requestParam) { (data, response, error) in
             if error == nil {
                 if data != nil {
@@ -74,24 +105,4 @@ class MemberVC: UIViewController {
             }
         }
     }
-    
-    func changeStatusToSuspension() {
-        var requestParam = [String: Any]()
-        
-        requestParam["action"] = "setMemberToSuspension"
-        requestParam["memberId"] = member.id
-        executeTask(url_server!, requestParam) { (data, response, error) in
-            if error == nil {
-                if data != nil {
-                    print("input: \(String(data: data!, encoding: .utf8)!)")
-                    if let result = try? JSONDecoder().decode(String.self, from: data!) {
-                        print("resultSetMemberToSuspension: \(result)")
-                    }
-                }
-            }
-        }
-    }
-
-    
-
 }

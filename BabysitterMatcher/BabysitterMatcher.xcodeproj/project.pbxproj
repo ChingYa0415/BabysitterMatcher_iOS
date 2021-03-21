@@ -18,6 +18,10 @@
 		2419F7522603D3F900D5F7A0 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F7512603D3F900D5F7A0 /* MemberCell.swift */; };
 		2419F7552603D40C00D5F7A0 /* MemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F7542603D40C00D5F7A0 /* MemberVC.swift */; };
 		2419F7582603D6CE00D5F7A0 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2419F7572603D6CE00D5F7A0 /* Member.swift */; };
+		242A532F260775EE00747120 /* Babysitter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 242A532E260775ED00747120 /* Babysitter.storyboard */; };
+		242A533226079B8B00747120 /* BabysitterTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242A533126079B8B00747120 /* BabysitterTVC.swift */; };
+		242A533526079B9B00747120 /* BabysitterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242A533426079B9B00747120 /* BabysitterCell.swift */; };
+		242A533826079BAC00747120 /* BabysitterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242A533726079BAC00747120 /* BabysitterVC.swift */; };
 		242DC953260351E5001EDCC3 /* RequirementFormTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242DC952260351E5001EDCC3 /* RequirementFormTVC.swift */; };
 		242DC95726035216001EDCC3 /* RequirementFormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242DC95626035216001EDCC3 /* RequirementFormCell.swift */; };
 		242DC95A2603523B001EDCC3 /* RequirementFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242DC9592603523B001EDCC3 /* RequirementFormVC.swift */; };
@@ -52,6 +56,10 @@
 		2419F7512603D3F900D5F7A0 /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		2419F7542603D40C00D5F7A0 /* MemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberVC.swift; sourceTree = "<group>"; };
 		2419F7572603D6CE00D5F7A0 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		242A532E260775ED00747120 /* Babysitter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Babysitter.storyboard; sourceTree = "<group>"; };
+		242A533126079B8B00747120 /* BabysitterTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabysitterTVC.swift; sourceTree = "<group>"; };
+		242A533426079B9B00747120 /* BabysitterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabysitterCell.swift; sourceTree = "<group>"; };
+		242A533726079BAC00747120 /* BabysitterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabysitterVC.swift; sourceTree = "<group>"; };
 		242DC952260351E5001EDCC3 /* RequirementFormTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementFormTVC.swift; sourceTree = "<group>"; };
 		242DC95626035216001EDCC3 /* RequirementFormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementFormCell.swift; sourceTree = "<group>"; };
 		242DC9592603523B001EDCC3 /* RequirementFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementFormVC.swift; sourceTree = "<group>"; };
@@ -87,6 +95,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		242A532C260775DD00747120 /* Babysitter */ = {
+			isa = PBXGroup;
+			children = (
+				242A532E260775ED00747120 /* Babysitter.storyboard */,
+				242A533126079B8B00747120 /* BabysitterTVC.swift */,
+				242A533426079B9B00747120 /* BabysitterCell.swift */,
+				242A533726079BAC00747120 /* BabysitterVC.swift */,
+			);
+			path = Babysitter;
+			sourceTree = "<group>";
+		};
 		244CA37425FF3A1800FDFD3F = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +125,7 @@
 		244CA37F25FF3A1800FDFD3F /* BabysitterMatcher */ = {
 			isa = PBXGroup;
 			children = (
+				242A532C260775DD00747120 /* Babysitter */,
 				24D8A8A025FF8741006FA7DF /* Bean */,
 				24D8A89F25FF82BF006FA7DF /* Common */,
 				2462F94425FF4C9F00D7DE0F /* Member */,
@@ -252,6 +272,7 @@
 				244CA38A25FF3A1A00FDFD3F /* Assets.xcassets in Resources */,
 				2412F0A825FF50A40031EF88 /* RequirementForm.storyboard in Resources */,
 				2412F0AC25FF50C50031EF88 /* Certificate.storyboard in Resources */,
+				242A532F260775EE00747120 /* Babysitter.storyboard in Resources */,
 				244CA38825FF3A1800FDFD3F /* Main.storyboard in Resources */,
 				2412F0B025FF50EC0031EF88 /* Member.storyboard in Resources */,
 			);
@@ -269,12 +290,15 @@
 				243982652601F54C0081C99B /* Babysitter.swift in Sources */,
 				2412F0C325FF71FA0031EF88 /* PostReviewCell.swift in Sources */,
 				242DC95A2603523B001EDCC3 /* RequirementFormVC.swift in Sources */,
+				242A533826079BAC00747120 /* BabysitterVC.swift in Sources */,
 				2419F7552603D40C00D5F7A0 /* MemberVC.swift in Sources */,
 				24516B4C2600D3B800FF3CAB /* CertificateCell.swift in Sources */,
 				2419F7582603D6CE00D5F7A0 /* Member.swift in Sources */,
+				242A533226079B8B00747120 /* BabysitterTVC.swift in Sources */,
 				242DC96126036D12001EDCC3 /* City.swift in Sources */,
 				242DC953260351E5001EDCC3 /* RequirementFormTVC.swift in Sources */,
 				24D8A89C25FF7CC5006FA7DF /* RemoteAccess.swift in Sources */,
+				242A533526079B9B00747120 /* BabysitterCell.swift in Sources */,
 				244CA38125FF3A1800FDFD3F /* AppDelegate.swift in Sources */,
 				2412F0BC25FF5F080031EF88 /* ForumCell.swift in Sources */,
 				2419F7522603D3F900D5F7A0 /* MemberCell.swift in Sources */,

@@ -27,6 +27,7 @@ class ForumTVC: UITableViewController {
                     print("input \(String(data: data!, encoding: .utf8)!)")
                     
                     if let result = try? decoder.decode([Post].self, from: data!) {
+                        print("resultAllPost \(result)")
                         self.postList = result
                         DispatchQueue.main.async {
                             self.tableView.reloadData()

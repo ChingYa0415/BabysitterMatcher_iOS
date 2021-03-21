@@ -25,10 +25,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="狀態" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQg-eT-pbj">
-                                            <rect key="frame" x="20" y="11" width="45" height="27"/>
+                                            <rect key="frame" x="20" y="11" width="374" height="27"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="45" id="GZR-Eb-BCH"/>
                                                 <constraint firstAttribute="height" constant="27" id="Od7-vN-vdV"/>
+                                                <constraint firstAttribute="width" constant="374" id="RaL-85-DKU"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>

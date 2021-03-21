@@ -17,6 +17,8 @@ class Babysitter: Codable {
     var city: String?
     var district: String?
     var address: String?
+    var place: String?
+    var type: String?
     var charge: String?
     var status: Int?
     var capacity: Int?
@@ -31,7 +33,7 @@ class Babysitter: Codable {
 //    output: {"id":20,"name":"王保母","age":42,"gender":0,"cellphone":"0980999999","seniority":0.0,"city":"基隆市","district":"(200)仁愛區","address":"台北市中山區南京東路三段219號5樓","charge":"日間托育：25000/月","status":1,"capacity":2,"occupied":0,"average_review_star":0.0,"completed_order_count":0,"self_introduction":"曾帶Peter從3個月直到成年，擁有30多年保姆經驗，每個被帶過長大不是律師就是醫生。","last_update_datetime":"2021-03-11 11:52:45","last_update_member_id":0,"member_id":50}
 
     
-    public init(_ id: Int, _ name: String, _ age: Int, _ gender: Int, _ cellphone: String, _ seniority: Float, _ city: String, _ district: String, _ address: String, _ charge: String, _ status: Int, _ capacity: Int, _ occupied: Int, _ average_review_star: Float, _ completed_order_count: Int, _ self_introduction: String, _ last_update_member_id: Int, _ member_id: Int) {
+    public init(_ id: Int, _ name: String, _ age: Int, _ gender: Int, _ cellphone: String, _ seniority: Float, _ city: String, _ district: String, _ address: String, _ place: String,   _ type: String , _ charge: String, _ status: Int, _ capacity: Int, _ occupied: Int, _ average_review_star: Float, _ completed_order_count: Int, _ self_introduction: String, _ last_update_member_id: Int, _ member_id: Int) {
         self.id = id
         self.name = name
         self.age = age
@@ -41,6 +43,8 @@ class Babysitter: Codable {
         self.city = city
         self.district = district
         self.address = address
+        self.place = place
+        self.type = type
         self.charge = charge
         self.status = status
         self.capacity = capacity
@@ -52,4 +56,23 @@ class Babysitter: Codable {
         self.last_update_member_id = last_update_member_id
         self.member_id = member_id
     }
+//    this.id = id;
+//    this.name = name;
+//    this.age = age;
+//    this.gender = gender;
+//    this.cellphone = cellphone;
+//    this.seniority = seniority;
+//    this.city = city;
+//    this.district = district;
+//    this.address = address;
+//    this.charge = charge;
+//    this.status = status;
+//    this.capacity = capacity;
+//    this.occupied = occupied;
+//    this.average_review_star = average_review_star;
+//    this.completed_order_count = completed_order_count;
+//    this.self_introduction = self_introduction;
+//    this.last_update_member_id = last_update_member_id;
+//    this.member_id = member_id;
+    
 }

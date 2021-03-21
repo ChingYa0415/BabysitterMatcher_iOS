@@ -36,7 +36,6 @@ class RequirementFormTVC: UITableViewController {
                 print(error!.localizedDescription)
             }
         }
-        
         self.tableView.reloadData()
     }
     
@@ -69,90 +68,7 @@ class RequirementFormTVC: UITableViewController {
         
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let hide = UIContextualAction(style: .normal, title: "隱藏") { (action, view, bool) in
-            let requirementForm = self.requirementFormList[indexPath.row]
-            let alert = UIAlertController(title: "隱藏此需求單", message: "確認將此需求單隱藏嗎？", preferredStyle: .alert)
-            
-            let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-            let confirm = UIAlertAction(title: "確認", style: .default) { (alertAction) in
-                if let requirementFormId = requirementForm.id {
-                    var requestParam = [String: Any]()
-                    requestParam["action"] = "hideRequirementFormStatus"
-                    requestParam["requirementFormId"] = requirementFormId
-                    executeTask(self.url_server!, requestParam) { (data, response, error) in
-                        if error == nil {
-                            if data != nil {
-                                print("input: \(String(data: data!, encoding: .utf8)!)")
-                                if let result = try? JSONDecoder().decode(Int.self, from: data!) {
-                                    print("resultHideRequirementFormStatus: \(result)")
-                                    requirementForm.status = result
-                                    DispatchQueue.main.async {
-                                        if let control = self.tableView.refreshControl {
-                                            if control.isRefreshing {
-                                                control.endRefreshing()
-                                            }
-                                        }
-                                        self.tableView.reloadData()
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            
-            alert.addAction(cancel)
-            alert.addAction(confirm)
-            self.present(alert, animated: true, completion: nil)
-        }
-        hide.backgroundColor = .lightGray
-        
-        let show = UIContextualAction(style: .normal, title: "顯示") { (action, view, bool) in
-            let requirement = self.requirementFormList[indexPath.row]
-            let alert = UIAlertController(title: "顯示此需求單", message: "確認將此需求單顯示嗎？", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-            let confirm = UIAlertAction(title: "確認", style: .default) {(alertAction) in
-                if let requirementFormId = requirement.id {
-                    var requestParam = [String: Any]()
-                    requestParam["action"] = "showRequirementFormStatus"
-                    requestParam["requirementFormId"] = requirementFormId
-                    executeTask(self.url_server!, requestParam) { (data, response, error) in
-                        if error == nil {
-                            if data != nil {
-                                print("input: \(String(data: data!, encoding: .utf8)!)")
-                                if let result = try? JSONDecoder().decode(Int.self, from: data!) {
-                                    print("resultShowRequirementFormStatus: \(result)")
-                                    requirement.status = result
-                                    DispatchQueue.main.async {
-                                        if let control = self.tableView.refreshControl {
-                                            if control.isRefreshing {
-                                                control.endRefreshing()
-                                            }
-                                        }
-                                        self.tableView.reloadData()
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            
-            alert.addAction(cancel)
-            alert.addAction(confirm)
-            self.present(alert, animated: true, completion: nil)
-        }
-        show.backgroundColor = .green
-        
-        let swipeActions = UISwipeActionsConfiguration(actions: [hide, show])
-        
-        swipeActions.performsFirstActionWithFullSwipe = false
-        return swipeActions
-    }
-    */
+    
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "RequirementFormCell"

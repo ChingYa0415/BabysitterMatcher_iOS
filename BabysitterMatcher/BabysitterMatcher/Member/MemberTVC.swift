@@ -12,6 +12,31 @@ class MemberTVC: UITableViewController {
     var memberList = [Member]()
     var imageData: Data?
     
+    override func viewWillAppear(_ animated: Bool) {
+        var requestParam = [String: String]()
+        requestParam["action"] = "getAllMembers"
+        executeTask(url_server!, requestParam) { (data, respond, error) in
+            let decoder = JSONDecoder()
+            let format = DateFormatter()
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            decoder.dateDecodingStrategy = .formatted(format)
+            if error == nil {
+                if data != nil {
+                    print("input \(String(data: data!, encoding: .utf8)!)")
+                    
+                    if let result = try? decoder.decode([Member].self, from: data!) {
+                        self.memberList = result
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,10 +74,17 @@ class MemberTVC: UITableViewController {
 
         cell.lbAccount.text = member.account
         cell.lbNickname.text = member.nickname
-        if member.status == 2 {
+        
+        if member.status == 1 {
+            cell.lbStatus.text = "未啟用"
+        } else if member.status == 2 {
             cell.lbStatus.text = "一般會員"
         } else if member.status == 3 {
             cell.lbStatus.text = "保母會員"
+        } else if member.status == 5 {
+            cell.lbStatus.text = "停權"
+        } else if member.status == 6 {
+            cell.lbStatus.text = "審核中保母"
         }
         
         requestParam["action"] = "getMemberRegisterDate"

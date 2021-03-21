@@ -89,8 +89,6 @@ class CertificateVC: UIViewController {
                             status = "一般"
                         } else if result == 3 {
                             status = "保母"
-                        } else if result == 4 {
-                            status = "管理者"
                         } else if result == 5 {
                             status = "停權"
                         } else if result == 6 {
