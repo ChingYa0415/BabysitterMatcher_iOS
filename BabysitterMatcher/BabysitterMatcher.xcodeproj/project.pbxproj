@@ -35,7 +35,7 @@
 		244CA38825FF3A1800FDFD3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244CA38625FF3A1800FDFD3F /* Main.storyboard */; };
 		244CA38A25FF3A1A00FDFD3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244CA38925FF3A1A00FDFD3F /* Assets.xcassets */; };
 		244CA38D25FF3A1A00FDFD3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244CA38B25FF3A1A00FDFD3F /* LaunchScreen.storyboard */; };
-		24516B432600A10F00FF3CAB /* PostReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24516B422600A10F00FF3CAB /* PostReviewVC.swift */; };
+		24516B432600A10F00FF3CAB /* ForumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24516B422600A10F00FF3CAB /* ForumVC.swift */; };
 		24516B462600A55900FF3CAB /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24516B452600A55900FF3CAB /* Reply.swift */; };
 		24516B492600D39D00FF3CAB /* CertificateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24516B482600D39D00FF3CAB /* CertificateTVC.swift */; };
 		24516B4C2600D3B800FF3CAB /* CertificateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24516B4B2600D3B800FF3CAB /* CertificateCell.swift */; };
@@ -75,7 +75,7 @@
 		244CA38925FF3A1A00FDFD3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		244CA38C25FF3A1A00FDFD3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		244CA38E25FF3A1A00FDFD3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24516B422600A10F00FF3CAB /* PostReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReviewVC.swift; sourceTree = "<group>"; };
+		24516B422600A10F00FF3CAB /* ForumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumVC.swift; sourceTree = "<group>"; };
 		24516B452600A55900FF3CAB /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		24516B482600D39D00FF3CAB /* CertificateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateTVC.swift; sourceTree = "<group>"; };
 		24516B4B2600D3B800FF3CAB /* CertificateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateCell.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				2412F0B825FF5D1B0031EF88 /* ForumTVC.swift */,
 				2412F0C225FF71FA0031EF88 /* PostReviewCell.swift */,
 				2412F0BB25FF5F080031EF88 /* ForumCell.swift */,
-				24516B422600A10F00FF3CAB /* PostReviewVC.swift */,
+				24516B422600A10F00FF3CAB /* ForumVC.swift */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -307,7 +307,7 @@
 				242DC95D2603528C001EDCC3 /* RequirementForm.swift in Sources */,
 				24D8A8A325FF8FD2006FA7DF /* Post.swift in Sources */,
 				244CA38325FF3A1800FDFD3F /* SceneDelegate.swift in Sources */,
-				24516B432600A10F00FF3CAB /* PostReviewVC.swift in Sources */,
+				24516B432600A10F00FF3CAB /* ForumVC.swift in Sources */,
 				24516B462600A55900FF3CAB /* Reply.swift in Sources */,
 				24516B492600D39D00FF3CAB /* CertificateTVC.swift in Sources */,
 				2419F74D2603D38E00D5F7A0 /* MemberTVC.swift in Sources */,

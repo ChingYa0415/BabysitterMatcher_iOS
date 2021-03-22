@@ -168,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="-281.15942028985512" y="-313.39285714285711"/>
         </scene>
-        <!--Post ReviewVC-->
+        <!--ForumVC-->
         <scene sceneID="Bpe-3k-9Op">
             <objects>
-                <viewController id="m16-mE-mkL" customClass="PostReviewVC" customModule="BabysitterMatcher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m16-mE-mkL" customClass="ForumVC" customModule="BabysitterMatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ih4-Tv-t77">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

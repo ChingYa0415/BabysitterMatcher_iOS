@@ -206,7 +206,7 @@ class ForumTVC: UITableViewController {
         if segue.identifier == "PostReviewSegue" {
             let indexPath = self.tableView.indexPathForSelectedRow
             let post = postList[indexPath!.row]
-            let postViewVC = segue.destination as! PostReviewVC
+            let postViewVC = segue.destination as! ForumVC
             postViewVC.post = post
         }
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostReviewVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ForumVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var lbStatus: UILabel!
     @IBOutlet weak var lbTitle: UILabel!

@@ -86,7 +86,7 @@ class BabysitterVC: UIViewController {
         var requestParam = [String: Any]()
         
         requestParam["action"] = "setMemberStatus"
-        requestParam["id"] = babysitter?.member_id
+        requestParam["memberId"] = babysitter?.member_id
         requestParam["type"] = type
         executeTask(url_server!, requestParam) { (data, response, error) in
             if error == nil {
