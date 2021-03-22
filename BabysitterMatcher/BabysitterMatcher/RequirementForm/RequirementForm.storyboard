@@ -256,7 +256,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="ARQ-RZ-UCb">
-                                <rect key="frame" x="115" y="650" width="185" height="38"/>
+                                <rect key="frame" x="102" y="650" width="185" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3k-Sm-gKc">
                                         <rect key="frame" x="0.0" y="0.0" width="43" height="38"/>
@@ -286,14 +286,15 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="JfY-LK-rzq"/>
-                                    <constraint firstAttribute="width" constant="185" id="iJZ-9F-gle"/>
+                                    <constraint firstAttribute="width" constant="185" id="YRI-eG-NIe"/>
+                                    <constraint firstAttribute="height" constant="38" id="eeK-e2-vdw"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VBN-ua-uik"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ARQ-RZ-UCb" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="102" id="5or-fS-JFY"/>
                             <constraint firstItem="LBt-Be-hM0" firstAttribute="top" secondItem="5pa-3K-bAM" secondAttribute="bottom" constant="8" symbolic="YES" id="63t-fM-q7i"/>
                             <constraint firstItem="LBt-Be-hM0" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="20" id="8jq-pl-Le5"/>
                             <constraint firstItem="ioL-yf-JUs" firstAttribute="top" secondItem="UVF-Bm-22D" secondAttribute="bottom" constant="21" id="BWs-Tn-7Z9"/>
@@ -301,7 +302,6 @@
                             <constraint firstItem="32o-Fg-gUd" firstAttribute="top" secondItem="Bf6-eN-nRW" secondAttribute="bottom" constant="8" symbolic="YES" id="Mlx-rD-hoA"/>
                             <constraint firstItem="Bf6-eN-nRW" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="20" id="NYb-yQ-an1"/>
                             <constraint firstItem="B8b-Zo-AWh" firstAttribute="leading" secondItem="5pa-3K-bAM" secondAttribute="trailing" constant="12" id="QAK-IN-fnC"/>
-                            <constraint firstItem="ARQ-RZ-UCb" firstAttribute="top" secondItem="BVq-1L-79R" secondAttribute="bottom" constant="294" id="Qw2-LP-Sys"/>
                             <constraint firstItem="PiD-ie-QiX" firstAttribute="leading" secondItem="SBl-mL-aq1" secondAttribute="trailing" constant="8" symbolic="YES" id="RhR-hE-7Lt"/>
                             <constraint firstItem="Tlj-CM-ZJH" firstAttribute="leading" secondItem="32o-Fg-gUd" secondAttribute="trailing" constant="8" symbolic="YES" id="SwH-a4-BQe"/>
                             <constraint firstItem="UVF-Bm-22D" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="20" id="TVy-mi-DHL"/>
@@ -314,8 +314,8 @@
                             <constraint firstItem="UVF-Bm-22D" firstAttribute="top" secondItem="32o-Fg-gUd" secondAttribute="bottom" constant="8" symbolic="YES" id="b8m-DG-Ipn"/>
                             <constraint firstItem="bJ6-rF-4Pi" firstAttribute="top" secondItem="SBl-mL-aq1" secondAttribute="bottom" constant="8" symbolic="YES" id="bOl-Hn-OsT"/>
                             <constraint firstItem="5pa-3K-bAM" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="20" id="cGX-ob-Zh2"/>
+                            <constraint firstItem="ARQ-RZ-UCb" firstAttribute="top" secondItem="bJ6-rF-4Pi" secondAttribute="bottom" constant="294" id="e5w-Ss-c5B"/>
                             <constraint firstItem="mea-q4-ryp" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="20" id="fRI-FB-cjU"/>
-                            <constraint firstItem="ARQ-RZ-UCb" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="115" id="iTA-6h-L7B"/>
                             <constraint firstItem="B8b-Zo-AWh" firstAttribute="top" secondItem="ioL-yf-JUs" secondAttribute="bottom" constant="8" symbolic="YES" id="knB-mj-LrR"/>
                             <constraint firstItem="mea-q4-ryp" firstAttribute="top" secondItem="UVF-Bm-22D" secondAttribute="bottom" constant="21" id="oGc-4L-uXg"/>
                             <constraint firstItem="5pa-3K-bAM" firstAttribute="top" secondItem="mea-q4-ryp" secondAttribute="bottom" constant="8" symbolic="YES" id="ohX-na-pgB"/>
