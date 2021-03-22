@@ -181,8 +181,10 @@ class ForumTVC: UITableViewController {
         if let status = post.status {
             if status == 1 {
                 cell.lbStatus.text = "正常"
+                cell.lbStatus.textColor = .blue
             } else {
                 cell.lbStatus.text = "隱藏"
+                cell.lbStatus.textColor = .red
             }
         }
         

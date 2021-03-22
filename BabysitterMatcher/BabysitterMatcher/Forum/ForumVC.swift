@@ -31,13 +31,16 @@ class ForumVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let status = post.status {
             if status == 1 {
                 lbStatus.text = "正常"
+                lbStatus.textColor = .blue
             } else {
                 lbStatus.text = "隱藏"
+                lbStatus.textColor = .red
             }
         }
         
         lbTitle.text = post.title
         lbType.text = post.type
+        lbContent.text = post.content
         
         var requestParam = [String: Any]()
         requestParam["action"] = "getForumReplyCount"

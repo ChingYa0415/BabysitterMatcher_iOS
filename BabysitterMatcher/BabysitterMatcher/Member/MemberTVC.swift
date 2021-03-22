@@ -77,14 +77,19 @@ class MemberTVC: UITableViewController {
         
         if member.status == 1 {
             cell.lbStatus.text = "未啟用"
+            cell.lbStatus.textColor = .gray
         } else if member.status == 2 {
             cell.lbStatus.text = "一般會員"
+            cell.lbStatus.textColor = .blue
         } else if member.status == 3 {
             cell.lbStatus.text = "保母會員"
+            cell.lbStatus.textColor = .blue
         } else if member.status == 5 {
             cell.lbStatus.text = "停權"
+            cell.lbStatus.textColor = .red
         } else if member.status == 6 {
             cell.lbStatus.text = "審核中保母"
+            cell.lbStatus.textColor = .blue
         }
         
         requestParam["action"] = "getMemberRegisterDate"

@@ -37,8 +37,10 @@ class RequirementFormVC: UIViewController {
         if let status = requirementForm?.visibility{
             if status == 1 {
                 self.lbVisibility.text = "正常"
+                self.lbVisibility.textColor = .blue
             } else {
                 self.lbVisibility.text = "隱藏"
+                self.lbVisibility.textColor = .red
             }
         }
         
@@ -119,9 +121,9 @@ class RequirementFormVC: UIViewController {
                     print("input: \(String(data: data!, encoding: .utf8)!)")
                     if let result = try? JSONDecoder().decode(Int.self, from: data!) {
                         print("resultHideRequirementFormStatus: \(String(describing: result))")
-                        DispatchQueue.main.async {
-                            self.lbVisibility.text = "隱藏"
-                        }
+//                        DispatchQueue.main.async {
+//                            self.lbVisibility.text = "隱藏"
+//                        }
                     }
                 }
             }
@@ -138,9 +140,9 @@ class RequirementFormVC: UIViewController {
                     print("input: \(String(data: data!, encoding: .utf8)!)")
                     if let result = try? JSONDecoder().decode(Int.self, from: data!) {
                         print("resultShowRequirementFormStatus: \(String(describing: result))")
-                        DispatchQueue.main.async {
-                            self.lbVisibility.text = "正常"
-                        }
+//                        DispatchQueue.main.async {
+//                            self.lbVisibility.text = "正常"
+//                        }
                     }
                 }
             }

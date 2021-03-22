@@ -52,10 +52,13 @@ class BabysitterTVC: UITableViewController {
 
         if babysitter.status == 1 {
             cell.lbBabysitterStatus.text = "可收托"
+            cell.lbBabysitterStatus.textColor = .blue
         } else if babysitter.status == 2 {
             cell.lbBabysitterStatus.text = "已額滿"
+            cell.lbBabysitterStatus.textColor = .red
         } else if babysitter.status == 3 {
             cell.lbBabysitterStatus.text = "停止收托"
+            cell.lbBabysitterStatus.textColor = .gray
         }
         
         requestParam["action"] = "getBabysitterMemberImage"

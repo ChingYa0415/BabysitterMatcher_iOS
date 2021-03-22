@@ -262,10 +262,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-xF-qFv">
                                         <rect key="frame" x="0.0" y="0.0" width="43" height="38"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="0OM-qZ-F5P"/>
-                                            <constraint firstAttribute="width" constant="43" id="rSo-kh-zz1"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="授權"/>
                                         <connections>
@@ -274,10 +270,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1M-n3-7bS">
                                         <rect key="frame" x="142" y="0.0" width="43" height="38"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="0bW-1K-xrW"/>
-                                            <constraint firstAttribute="width" constant="43" id="uGa-xo-kl2"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="停權">
                                             <color key="titleColor" systemColor="systemRedColor"/>
@@ -288,20 +280,21 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="JIs-NH-O61"/>
-                                    <constraint firstAttribute="width" constant="185" id="iJd-3g-X30"/>
+                                    <constraint firstAttribute="width" constant="185" id="VOl-yN-zdL"/>
+                                    <constraint firstAttribute="height" constant="38" id="zq2-CI-aLi"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uHi-WL-k3j"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5xU-9h-DA2" firstAttribute="leading" secondItem="uHi-WL-k3j" secondAttribute="leading" constant="103" id="6IP-vU-kbA"/>
                             <constraint firstItem="AQR-ff-WTe" firstAttribute="leading" secondItem="9ar-ta-xdO" secondAttribute="trailing" constant="8" symbolic="YES" id="8rP-3V-ZHp"/>
+                            <constraint firstItem="5xU-9h-DA2" firstAttribute="top" secondItem="2W3-Y7-o4A" secondAttribute="bottom" constant="264" id="A0d-HR-uAq"/>
                             <constraint firstItem="AQR-ff-WTe" firstAttribute="top" secondItem="5Bt-ht-qDi" secondAttribute="bottom" constant="8" symbolic="YES" id="AEG-Ao-lSI"/>
                             <constraint firstItem="2W3-Y7-o4A" firstAttribute="leading" secondItem="1qv-jz-XTa" secondAttribute="trailing" constant="8" symbolic="YES" id="IUu-IH-bzR"/>
                             <constraint firstItem="1qv-jz-XTa" firstAttribute="leading" secondItem="uHi-WL-k3j" secondAttribute="leading" constant="16" id="IkH-hB-eYe"/>
                             <constraint firstItem="5Bt-ht-qDi" firstAttribute="top" secondItem="M9z-Aq-k5g" secondAttribute="bottom" constant="38" id="NT1-VN-JZ4"/>
-                            <constraint firstItem="5xU-9h-DA2" firstAttribute="top" secondItem="2W3-Y7-o4A" secondAttribute="bottom" constant="264" id="Op2-BN-3LN"/>
                             <constraint firstItem="FTK-Sm-1Se" firstAttribute="top" secondItem="LEe-T5-f0Q" secondAttribute="bottom" constant="8" symbolic="YES" id="Oy9-b9-aej"/>
                             <constraint firstItem="K38-iO-yRp" firstAttribute="top" secondItem="OKi-WH-m2L" secondAttribute="bottom" constant="8" symbolic="YES" id="RWE-Wd-up1"/>
                             <constraint firstItem="OKi-WH-m2L" firstAttribute="top" secondItem="AQR-ff-WTe" secondAttribute="bottom" constant="8" symbolic="YES" id="VTy-nl-boP"/>
@@ -313,7 +306,6 @@
                             <constraint firstItem="2W3-Y7-o4A" firstAttribute="top" secondItem="K38-iO-yRp" secondAttribute="bottom" constant="8" symbolic="YES" id="gap-RZ-rgP"/>
                             <constraint firstItem="j4w-GL-S1d" firstAttribute="leading" secondItem="uHi-WL-k3j" secondAttribute="leading" constant="16" id="i1R-Qs-Ge4"/>
                             <constraint firstItem="LEe-T5-f0Q" firstAttribute="leading" secondItem="uHi-WL-k3j" secondAttribute="leading" constant="16" id="k2R-CU-vi7"/>
-                            <constraint firstItem="5xU-9h-DA2" firstAttribute="leading" secondItem="uHi-WL-k3j" secondAttribute="leading" constant="103" id="keF-CI-d9z"/>
                             <constraint firstItem="9ar-ta-xdO" firstAttribute="top" secondItem="j4w-GL-S1d" secondAttribute="bottom" constant="8" symbolic="YES" id="qOb-OX-fH1"/>
                             <constraint firstItem="LEe-T5-f0Q" firstAttribute="top" secondItem="9ar-ta-xdO" secondAttribute="bottom" constant="8" symbolic="YES" id="r8h-Z0-z7s"/>
                             <constraint firstItem="9ar-ta-xdO" firstAttribute="leading" secondItem="uHi-WL-k3j" secondAttribute="leading" constant="16" id="rPC-PB-Rne"/>

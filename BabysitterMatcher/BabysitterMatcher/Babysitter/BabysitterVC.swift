@@ -28,9 +28,11 @@ class BabysitterVC: UIViewController {
     @IBOutlet weak var lbBabysitterSelfIntroduction: UILabel!
     @IBAction func btToBabysitter(_ sender: Any) {
         changeStatus(type: 3)
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btToNormal(_ sender: Any) {
         changeStatus(type: 2)
+        self.navigationController?.popViewController(animated: true)
     }
     
     let url_server = URL(string: common_url + "Homepage")

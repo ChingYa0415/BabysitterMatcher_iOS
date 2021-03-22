@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oQu-3C-VOU">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,20 +8,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--保姆-->
         <scene sceneID="Onc-FY-Yjj">
             <objects>
                 <tableViewController id="Lod-QC-6Xc" customClass="BabysitterTVC" customModule="BabysitterMatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qu0-aB-QSu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BabysitterCell" rowHeight="140" id="rbS-d8-rf8" customClass="BabysitterCell" customModule="BabysitterMatcher" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="140"/>
+                                <rect key="frame" x="0.0" y="28" width="390" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rbS-d8-rf8" id="k1c-W4-SyY">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保母狀態" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBV-J1-g2N">
@@ -136,7 +136,7 @@
                             <outlet property="delegate" destination="Lod-QC-6Xc" id="lg6-nv-iPo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="wH5-PX-f0j"/>
+                    <navigationItem key="navigationItem" title="保姆" id="wH5-PX-f0j"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ld4-Ae-Bve" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +147,7 @@
             <objects>
                 <navigationController id="oQu-3C-VOU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cUO-h2-lL4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -163,7 +163,7 @@
             <objects>
                 <viewController id="UPm-da-I2f" customClass="BabysitterVC" customModule="BabysitterMatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QYr-dU-1YO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保母名稱：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTK-Qf-6eE">
@@ -387,7 +387,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最大可收托數：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoF-hW-PYs">
-                                <rect key="frame" x="20" y="472" width="121.5" height="21"/>
+                                <rect key="frame" x="20.000000000000007" y="472" width="121.66666666666669" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7ul-QW-CGR"/>
                                     <constraint firstAttribute="width" constant="121.66666666666669" id="VML-AW-wnT"/>
@@ -397,7 +397,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最大可收托數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3in-O4-ytA">
-                                <rect key="frame" x="156" y="472" width="258" height="21"/>
+                                <rect key="frame" x="156.33333333333337" y="472" width="258" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="258" id="CbN-7R-Ln7"/>
                                     <constraint firstAttribute="height" constant="21" id="nIl-hE-VFh"/>
@@ -447,7 +447,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已完成委託數：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPZ-BN-uEj">
-                                <rect key="frame" x="20" y="559" width="121.5" height="21"/>
+                                <rect key="frame" x="20.000000000000007" y="559" width="121.66666666666669" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="TWG-Gx-T4m"/>
                                     <constraint firstAttribute="width" constant="121.66666666666669" id="yTF-Z2-31n"/>
@@ -457,7 +457,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已完成委託數量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFz-ng-L9M">
-                                <rect key="frame" x="156" y="559" width="258" height="21"/>
+                                <rect key="frame" x="156.33333333333337" y="559" width="258" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7de-dK-f4F"/>
                                     <constraint firstAttribute="width" constant="258" id="TXc-vV-mlL"/>
@@ -476,33 +476,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="vnl-dg-wLN">
-                                <rect key="frame" x="115" y="670" width="185" height="38"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X9-Ln-mMW">
-                                        <rect key="frame" x="0.0" y="0.0" width="43" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="授權"/>
-                                        <connections>
-                                            <action selector="btToBabysitter:" destination="UPm-da-I2f" eventType="touchUpInside" id="N7M-Ec-nd8"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrR-uD-S9t">
-                                        <rect key="frame" x="142" y="0.0" width="43" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="停權">
-                                            <color key="titleColor" systemColor="systemRedColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btToNormal:" destination="UPm-da-I2f" eventType="touchUpInside" id="Cai-G0-dQh"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="185" id="OCR-Kg-e82"/>
-                                    <constraint firstAttribute="height" constant="38" id="j47-wP-4zL"/>
-                                </constraints>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自我介紹" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjP-IC-zga">
                                 <rect key="frame" x="115" y="588" width="279" height="74"/>
                                 <constraints>
@@ -533,6 +506,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="vnl-dg-wLN">
+                                <rect key="frame" x="103" y="670" width="185" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X9-Ln-mMW">
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="授權"/>
+                                        <connections>
+                                            <action selector="btToBabysitter:" destination="UPm-da-I2f" eventType="touchUpInside" id="N7M-Ec-nd8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrR-uD-S9t">
+                                        <rect key="frame" x="142" y="0.0" width="43" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="停權">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btToNormal:" destination="UPm-da-I2f" eventType="touchUpInside" id="Cai-G0-dQh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="boc-e9-WPs"/>
+                                    <constraint firstAttribute="width" constant="185" id="lxQ-xg-CLl"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TyD-aF-vqa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -575,12 +575,12 @@
                             <constraint firstItem="Zf6-yu-CfW" firstAttribute="leading" secondItem="TyD-aF-vqa" secondAttribute="leading" constant="20" id="UPO-me-eTQ"/>
                             <constraint firstItem="Sar-0q-Egn" firstAttribute="leading" secondItem="9Xy-sQ-ist" secondAttribute="trailing" constant="8" symbolic="YES" id="Y6F-pZ-LIA"/>
                             <constraint firstItem="bQm-kp-gds" firstAttribute="top" secondItem="24m-7L-MPi" secondAttribute="bottom" constant="8" symbolic="YES" id="ZE9-Yp-8W5"/>
+                            <constraint firstItem="vnl-dg-wLN" firstAttribute="leading" secondItem="TyD-aF-vqa" secondAttribute="leading" constant="103" id="aGe-aC-GDG"/>
                             <constraint firstItem="sgl-oQ-176" firstAttribute="leading" secondItem="xvz-Mx-hzb" secondAttribute="trailing" constant="8" symbolic="YES" id="ajB-b5-tnY"/>
                             <constraint firstItem="Wc2-oO-egS" firstAttribute="top" secondItem="vpl-lj-qSC" secondAttribute="bottom" constant="8" symbolic="YES" id="bVB-M4-WDH"/>
                             <constraint firstItem="0Yc-Yx-1Pr" firstAttribute="top" secondItem="Sar-0q-Egn" secondAttribute="bottom" constant="8" symbolic="YES" id="bgx-MM-iVf"/>
                             <constraint firstItem="y3u-gh-uNx" firstAttribute="top" secondItem="sgl-oQ-176" secondAttribute="bottom" constant="8" symbolic="YES" id="cY4-2K-d5a"/>
                             <constraint firstItem="Dj3-YF-ths" firstAttribute="leading" secondItem="TyD-aF-vqa" secondAttribute="leading" constant="20" id="ciA-8h-lGT"/>
-                            <constraint firstItem="vnl-dg-wLN" firstAttribute="leading" secondItem="TyD-aF-vqa" secondAttribute="leading" constant="115" id="e0a-3A-Dmf"/>
                             <constraint firstItem="ODi-KD-x2R" firstAttribute="leading" secondItem="TyD-aF-vqa" secondAttribute="leading" constant="20" id="e89-BV-GL5"/>
                             <constraint firstItem="V3G-Og-XvG" firstAttribute="leading" secondItem="TyD-aF-vqa" secondAttribute="leading" constant="20" id="eAa-rc-vU0"/>
                             <constraint firstItem="Sar-0q-Egn" firstAttribute="top" secondItem="GVN-rP-OSJ" secondAttribute="bottom" constant="8" symbolic="YES" id="fgh-UI-Kxs"/>
@@ -594,6 +594,7 @@
                             <constraint firstItem="LTK-Qf-6eE" firstAttribute="leading" secondItem="TyD-aF-vqa" secondAttribute="leading" constant="20" id="rFT-vS-4RH"/>
                             <constraint firstItem="xOl-KF-aif" firstAttribute="top" secondItem="0Yc-Yx-1Pr" secondAttribute="bottom" constant="8" symbolic="YES" id="rXX-bb-gsq"/>
                             <constraint firstItem="ODi-KD-x2R" firstAttribute="top" secondItem="9rB-39-q8Y" secondAttribute="bottom" constant="8" symbolic="YES" id="sLE-gw-b6y"/>
+                            <constraint firstItem="vnl-dg-wLN" firstAttribute="top" secondItem="AjP-IC-zga" secondAttribute="bottom" constant="8" symbolic="YES" id="sdl-24-fSo"/>
                             <constraint firstItem="sFj-dg-bsj" firstAttribute="leading" secondItem="TyD-aF-vqa" secondAttribute="leading" constant="20" id="sfS-Kw-YSN"/>
                             <constraint firstItem="HxO-Bu-r4Z" firstAttribute="top" secondItem="flS-lb-LQD" secondAttribute="bottom" constant="5" id="tFh-6B-D5G"/>
                             <constraint firstItem="flS-lb-LQD" firstAttribute="leading" secondItem="63H-jK-tKY" secondAttribute="trailing" constant="8" symbolic="YES" id="tqY-nc-ql4"/>
@@ -605,7 +606,6 @@
                             <constraint firstItem="9Xy-sQ-ist" firstAttribute="top" secondItem="ODi-KD-x2R" secondAttribute="bottom" constant="8" symbolic="YES" id="x5b-zC-YjF"/>
                             <constraint firstItem="cPZ-BN-uEj" firstAttribute="leading" secondItem="TyD-aF-vqa" secondAttribute="leading" constant="20" id="yWR-um-8Q7"/>
                             <constraint firstItem="rKe-m2-4BG" firstAttribute="leading" secondItem="TyD-aF-vqa" secondAttribute="leading" constant="20" id="zgh-Qw-Pzp"/>
-                            <constraint firstItem="vnl-dg-wLN" firstAttribute="top" secondItem="AjP-IC-zga" secondAttribute="bottom" constant="8" symbolic="YES" id="zrk-Q1-d1U"/>
                             <constraint firstItem="vpl-lj-qSC" firstAttribute="top" secondItem="KoF-hW-PYs" secondAttribute="bottom" constant="8" symbolic="YES" id="zvO-2V-mSx"/>
                         </constraints>
                     </view>

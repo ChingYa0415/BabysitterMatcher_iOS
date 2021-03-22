@@ -81,24 +81,33 @@ class CertificateTVC: UITableViewController {
                     print("input: \(String(data: data!, encoding: .utf8)!)")
                     if let result = try? JSONDecoder().decode(Int.self, from: data!) {
                         print("resultMemberStatus: \(result)")
-                                     
-                        var status: String?
-                        
-                        if result == 1 {
-                            status = "未啟用"
-                        } else if result == 2 {
-                            status = "一般會員"
-                        } else if result == 3 {
-                            status = "保母會員"
-                        } else if result == 5 {
-                            status = "停權"
-                        } else if result == 6 {
-                            status = "審核中保母"
-                        }
-                        
-                        print("status: \(String(describing: status))")
                         
                         DispatchQueue.main.async {
+                            var status: String?
+                            
+                            if result == 1 {
+                                status = "未啟用"
+                                cell.lbStatus.textColor = .gray
+                            } else if result == 2 {
+                                status = "一般會員"
+                                cell.lbStatus.textColor = .blue
+
+                            } else if result == 3 {
+                                status = "保母會員"
+                                cell.lbStatus.textColor = .blue
+
+                            } else if result == 5 {
+                                status = "停權"
+                                cell.lbStatus.textColor = .red
+
+                            } else if result == 6 {
+                                status = "審核中保母"
+                                cell.lbStatus.textColor = .blue
+
+                            }
+                            
+                            print("status: \(String(describing: status))")
+                            
                             cell.lbStatus.text = status!
                         }
                     }

@@ -96,8 +96,10 @@ class RequirementFormTVC: UITableViewController {
         if let status = requirementForm.visibility {
             if status == 1 {
                 cell.lbVisibility.text = "正常"
+                cell.lbVisibility.textColor = .blue
             } else {
                 cell.lbVisibility.text = "隱藏"
+                cell.lbVisibility.textColor = .red
             }
         }
         

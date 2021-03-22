@@ -256,13 +256,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="99" translatesAutoresizingMaskIntoConstraints="NO" id="ARQ-RZ-UCb">
-                                <rect key="frame" x="104" y="383" width="207" height="38"/>
+                                <rect key="frame" x="115" y="650" width="185" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3k-Sm-gKc">
-                                        <rect key="frame" x="0.0" y="0.0" width="65" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="38"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="NqU-UQ-wcH"/>
-                                            <constraint firstAttribute="width" constant="65" id="OzX-cf-Ods"/>
+                                            <constraint firstAttribute="height" constant="38" id="20m-0I-Ilg"/>
+                                            <constraint firstAttribute="width" constant="43" id="FsA-Qf-4hY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="顯示"/>
@@ -271,10 +271,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVs-op-xnh">
-                                        <rect key="frame" x="164" y="0.0" width="43" height="38"/>
+                                        <rect key="frame" x="142" y="0.0" width="43" height="38"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="43" id="XbC-8r-eqj"/>
-                                            <constraint firstAttribute="height" constant="38" id="YbD-bZ-h1p"/>
+                                            <constraint firstAttribute="height" constant="38" id="9RP-6R-PGR"/>
+                                            <constraint firstAttribute="width" constant="43" id="jJz-g0-sIX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="隱藏">
@@ -286,14 +286,8 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="s3k-Sm-gKc" firstAttribute="leading" secondItem="ARQ-RZ-UCb" secondAttribute="leading" id="CTO-ld-Xd2"/>
-                                    <constraint firstItem="rVs-op-xnh" firstAttribute="top" secondItem="ARQ-RZ-UCb" secondAttribute="top" id="Fdz-Jf-Woe"/>
-                                    <constraint firstItem="rVs-op-xnh" firstAttribute="leading" secondItem="s3k-Sm-gKc" secondAttribute="trailing" constant="99" id="ZJt-Kg-1CV"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="ZKi-ZT-yqY"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="caW-Hi-def"/>
-                                    <constraint firstAttribute="height" constant="38" id="iHg-fT-80x"/>
-                                    <constraint firstItem="s3k-Sm-gKc" firstAttribute="top" secondItem="ARQ-RZ-UCb" secondAttribute="top" id="wQO-sR-gwq"/>
-                                    <constraint firstAttribute="width" constant="207" id="zAz-nZ-dhE"/>
+                                    <constraint firstAttribute="height" constant="38" id="JfY-LK-rzq"/>
+                                    <constraint firstAttribute="width" constant="185" id="iJZ-9F-gle"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -307,6 +301,7 @@
                             <constraint firstItem="32o-Fg-gUd" firstAttribute="top" secondItem="Bf6-eN-nRW" secondAttribute="bottom" constant="8" symbolic="YES" id="Mlx-rD-hoA"/>
                             <constraint firstItem="Bf6-eN-nRW" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="20" id="NYb-yQ-an1"/>
                             <constraint firstItem="B8b-Zo-AWh" firstAttribute="leading" secondItem="5pa-3K-bAM" secondAttribute="trailing" constant="12" id="QAK-IN-fnC"/>
+                            <constraint firstItem="ARQ-RZ-UCb" firstAttribute="top" secondItem="BVq-1L-79R" secondAttribute="bottom" constant="294" id="Qw2-LP-Sys"/>
                             <constraint firstItem="PiD-ie-QiX" firstAttribute="leading" secondItem="SBl-mL-aq1" secondAttribute="trailing" constant="8" symbolic="YES" id="RhR-hE-7Lt"/>
                             <constraint firstItem="Tlj-CM-ZJH" firstAttribute="leading" secondItem="32o-Fg-gUd" secondAttribute="trailing" constant="8" symbolic="YES" id="SwH-a4-BQe"/>
                             <constraint firstItem="UVF-Bm-22D" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="20" id="TVy-mi-DHL"/>
@@ -320,13 +315,12 @@
                             <constraint firstItem="bJ6-rF-4Pi" firstAttribute="top" secondItem="SBl-mL-aq1" secondAttribute="bottom" constant="8" symbolic="YES" id="bOl-Hn-OsT"/>
                             <constraint firstItem="5pa-3K-bAM" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="20" id="cGX-ob-Zh2"/>
                             <constraint firstItem="mea-q4-ryp" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="20" id="fRI-FB-cjU"/>
-                            <constraint firstItem="ARQ-RZ-UCb" firstAttribute="top" secondItem="BVq-1L-79R" secondAttribute="bottom" constant="27" id="hi7-GA-h5w"/>
+                            <constraint firstItem="ARQ-RZ-UCb" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="115" id="iTA-6h-L7B"/>
                             <constraint firstItem="B8b-Zo-AWh" firstAttribute="top" secondItem="ioL-yf-JUs" secondAttribute="bottom" constant="8" symbolic="YES" id="knB-mj-LrR"/>
                             <constraint firstItem="mea-q4-ryp" firstAttribute="top" secondItem="UVF-Bm-22D" secondAttribute="bottom" constant="21" id="oGc-4L-uXg"/>
                             <constraint firstItem="5pa-3K-bAM" firstAttribute="top" secondItem="mea-q4-ryp" secondAttribute="bottom" constant="8" symbolic="YES" id="ohX-na-pgB"/>
                             <constraint firstItem="SBl-mL-aq1" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="20" id="p5T-xW-7qF"/>
                             <constraint firstItem="geV-nQ-QMu" firstAttribute="leading" secondItem="LBt-Be-hM0" secondAttribute="trailing" constant="8" symbolic="YES" id="rOP-IO-KGP"/>
-                            <constraint firstItem="ARQ-RZ-UCb" firstAttribute="leading" secondItem="VBN-ua-uik" secondAttribute="leading" constant="104" id="ryQ-Xf-F9t"/>
                             <constraint firstItem="PiD-ie-QiX" firstAttribute="top" secondItem="geV-nQ-QMu" secondAttribute="bottom" constant="8" symbolic="YES" id="t4H-zT-WO0"/>
                             <constraint firstItem="BVq-1L-79R" firstAttribute="top" secondItem="PiD-ie-QiX" secondAttribute="bottom" constant="8" symbolic="YES" id="v7J-eK-YpR"/>
                             <constraint firstItem="Tlj-CM-ZJH" firstAttribute="top" secondItem="VBN-ua-uik" secondAttribute="top" constant="60" id="xLs-X1-hn9"/>
