@@ -95,7 +95,7 @@ class ForumVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         executeTask(url_server!, requestParam) { (data, respond, error) in
             let decoder = JSONDecoder()
             let format = DateFormatter()
-            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            format.dateFormat = "yyyy-MM-dd"
             decoder.dateDecodingStrategy = .formatted(format)
             if error == nil {
                 if data != nil {

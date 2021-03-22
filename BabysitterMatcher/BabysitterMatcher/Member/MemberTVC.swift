@@ -12,13 +12,13 @@ class MemberTVC: UITableViewController {
     var memberList = [Member]()
     var imageData: Data?
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         var requestParam = [String: String]()
         requestParam["action"] = "getAllMembers"
         executeTask(url_server!, requestParam) { (data, respond, error) in
             let decoder = JSONDecoder()
             let format = DateFormatter()
-            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            format.dateFormat = "yyyy-MM-dd"
             decoder.dateDecodingStrategy = .formatted(format)
             if error == nil {
                 if data != nil {
@@ -83,7 +83,7 @@ class MemberTVC: UITableViewController {
             cell.lbStatus.textColor = .blue
         } else if member.status == 3 {
             cell.lbStatus.text = "保母會員"
-            cell.lbStatus.textColor = .blue
+            cell.lbStatus.textColor = .orange
         } else if member.status == 5 {
             cell.lbStatus.text = "停權"
             cell.lbStatus.textColor = .red

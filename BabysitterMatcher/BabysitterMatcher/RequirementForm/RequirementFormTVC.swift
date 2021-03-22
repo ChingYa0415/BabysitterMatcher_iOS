@@ -11,7 +11,7 @@ class RequirementFormTVC: UITableViewController {
     let url_server = URL(string: common_url + "Homepage")
     var requirementFormList = [RequirementForm]()
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         var requestParam = [String: String]()
         requestParam["action"] =  "getAllRequirementForm"

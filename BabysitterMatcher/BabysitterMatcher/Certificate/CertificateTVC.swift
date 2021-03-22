@@ -12,7 +12,7 @@ class CertificateTVC: UITableViewController {
     let url_server = URL(string: common_url + "Homepage")
     var certificateList = [Certificate]()
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         var requestParam = [String: String]()
         requestParam["action"] =  "getAllCertificate"
@@ -94,7 +94,7 @@ class CertificateTVC: UITableViewController {
 
                             } else if result == 3 {
                                 status = "保母會員"
-                                cell.lbStatus.textColor = .blue
+                                cell.lbStatus.textColor = .orange
 
                             } else if result == 5 {
                                 status = "停權"
@@ -102,7 +102,7 @@ class CertificateTVC: UITableViewController {
 
                             } else if result == 6 {
                                 status = "審核中保母"
-                                cell.lbStatus.textColor = .blue
+                                cell.lbStatus.textColor = .systemPink
 
                             }
                             

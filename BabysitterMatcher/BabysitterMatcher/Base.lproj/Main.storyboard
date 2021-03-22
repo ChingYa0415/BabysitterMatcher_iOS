@@ -136,7 +136,7 @@
         <scene sceneID="JYe-uY-oTL">
             <objects>
                 <navigationController id="xJs-Gf-i0M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="會員" image="person.and.person" catalog="system" id="gE1-sf-e22"/>
+                    <tabBarItem key="tabBarItem" title="會員" image="person.2" catalog="system" id="gE1-sf-e22"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k7r-Bi-b6l">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -172,7 +172,7 @@
         <image name="doc.richtext" catalog="system" width="115" height="128"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.and.person" catalog="system" width="128" height="81"/>
+        <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="tray.full" catalog="system" width="128" height="88"/>
     </resources>
 </document>
