@@ -78,6 +78,7 @@ class ForumTVC: UITableViewController {
             alert.addAction(confirm)
             self.present(alert, animated: true, completion: nil)
         }
+        
         hide.backgroundColor = .lightGray
         
         let show = UIContextualAction(style: .normal, title: "顯示") { (action, view, bool) in
