@@ -11,9 +11,7 @@ class BabysitterTVC: UITableViewController {
     let url_server = URL(string: common_url + "Homepage")
     var babysitterList = [Babysitter]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewDidAppear(_ animated: Bool) {
         var requestParam = [String: String]()
         requestParam["action"] = "getAllBabysitter"
         print("action getAllBabysitter")
@@ -37,6 +35,34 @@ class BabysitterTVC: UITableViewController {
                 print(error!.localizedDescription)
             }
         }
+    }
+    
+    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        var requestParam = [String: String]()
+//        requestParam["action"] = "getAllBabysitter"
+//        print("action getAllBabysitter")
+//        executeTask(url_server!, requestParam) { (data, respond, error) in
+//            let decoder = JSONDecoder()
+//            let format = DateFormatter()
+//            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//            decoder.dateDecodingStrategy = .formatted(format)
+//            if error == nil {
+//                if data != nil {
+//                    print("inputAllBabysitter \(String(data: data!, encoding: .utf8)!)")
+//                    if let result = try? decoder.decode([Babysitter].self, from: data!) {
+//                        print("resultAllBabysitter: \(result)")
+//                        self.babysitterList = result
+//                        DispatchQueue.main.async {
+//                            self.tableView.reloadData()
+//                        }
+//                    }
+//                }
+//            } else {
+//                print(error!.localizedDescription)
+//            }
+//        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

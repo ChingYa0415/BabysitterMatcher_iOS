@@ -98,11 +98,11 @@
             </objects>
             <point key="canvasLocation" x="280" y="3430"/>
         </scene>
-        <!--請求單-->
+        <!--需求單-->
         <scene sceneID="8tR-Za-3Co">
             <objects>
                 <navigationController id="Fne-Ve-dvk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="請求單" image="doc.text" catalog="system" id="CQc-wG-fUU"/>
+                    <tabBarItem key="tabBarItem" title="需求單" image="doc.text" catalog="system" id="CQc-wG-fUU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5kp-X4-eF3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -252,7 +252,11 @@ class CertificateVC: UIViewController {
                 if data != nil {
                     print("input: \(String(data: data!, encoding: .utf8)!)")
                     if let result = try? JSONDecoder().decode(Int.self, from: data!) {
-                        print("resultsetCertificateQualified: \(String(describing: result))")
+                        if result == 1 {
+                            print("證照審核通過及發出通知！")
+                        } else {
+                            print("證照審核失敗且有通知！")
+                        }
                     }
                 }
             }
