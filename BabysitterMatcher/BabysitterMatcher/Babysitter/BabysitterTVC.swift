@@ -12,6 +12,7 @@ class BabysitterTVC: UITableViewController {
     var babysitterList = [Babysitter]()
     
     override func viewDidAppear(_ animated: Bool) {
+
         var requestParam = [String: String]()
         requestParam["action"] = "getAllBabysitter"
         print("action getAllBabysitter")
@@ -36,6 +37,7 @@ class BabysitterTVC: UITableViewController {
             }
         }
     }
+    
     
     override func viewDidLoad() {
 //        super.viewDidLoad()
