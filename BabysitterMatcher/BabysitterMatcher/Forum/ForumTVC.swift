@@ -180,7 +180,7 @@ class ForumTVC: UITableViewController {
         }
         
         if let status = post.status {
-            if status == 1 {
+            if status == 0 {
                 cell.lbStatus.text = "正常"
                 cell.lbStatus.textColor = .blue
             } else {

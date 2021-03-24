@@ -10,7 +10,9 @@ import UIKit
 class RequirementFormCell: UITableViewCell {
 
     @IBOutlet weak var lbVisibility: UILabel!
+    @IBOutlet weak var ivMember: UIImageView!
     @IBOutlet weak var lbRequirementFormId: UILabel!
+    @IBOutlet weak var lbStatus: UILabel!
     @IBOutlet weak var lbMemberNickname: UILabel!
     
     override func awakeFromNib() {
