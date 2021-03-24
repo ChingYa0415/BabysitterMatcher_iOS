@@ -136,7 +136,7 @@
                             <outlet property="delegate" destination="cCe-Fb-7UZ" id="mwn-kP-boU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="請求單" id="sPS-8r-g0K"/>
+                    <navigationItem key="navigationItem" title="需求單" id="sPS-8r-g0K"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMl-x9-q4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
