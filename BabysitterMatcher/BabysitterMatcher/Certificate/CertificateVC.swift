@@ -134,7 +134,7 @@ class CertificateVC: UIViewController {
                     image = UIImage(named: "noImage.jpg")
                 }
                 DispatchQueue.main.async {
-                    self.ivCertificate.image = image
+                    self.ivMember.image = image
                 }
             } else {
                 print(error!.localizedDescription)
