@@ -90,7 +90,7 @@ class BabysitterTVC: UITableViewController {
         }
         
         requestParam["action"] = "getBabysitterMemberImage"
-        requestParam["id"] = babysitter.id
+        requestParam["id"] = babysitter.member_id
         requestParam["imageSize"] = cell.ivBabysitter.frame.height
         var image: UIImage?
         executeTask(url_server!, requestParam) { (data, response, error) in

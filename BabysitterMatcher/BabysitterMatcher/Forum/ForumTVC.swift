@@ -11,6 +11,33 @@ class ForumTVC: UITableViewController {
     let url_server = URL(string: common_url + "Homepage")
     var postList = [Post]()
     
+    override func viewDidAppear(_ animated: Bool) {
+        var requestParam = [String: String]()
+        requestParam["action"] =  "getAllPost"
+        
+        executeTask(url_server!, requestParam) { (data, respond, error) in
+            let decoder = JSONDecoder()
+            let format = DateFormatter()
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            decoder.dateDecodingStrategy = .formatted(format)
+            if error == nil {
+                if data != nil {
+                    print("input \(String(data: data!, encoding: .utf8)!)")
+                    
+                    if let result = try? decoder.decode([Post].self, from: data!) {
+                        print("resultAllPost \(result)")
+                        self.postList = result
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
