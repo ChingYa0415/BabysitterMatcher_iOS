@@ -89,7 +89,7 @@ class MemberTVC: UITableViewController {
             cell.lbStatus.textColor = .red
         } else if member.status == 6 {
             cell.lbStatus.text = "審核中保母"
-            cell.lbStatus.textColor = .blue
+            cell.lbStatus.textColor = .systemPink
         }
         
         requestParam["action"] = "getMemberRegisterDate"

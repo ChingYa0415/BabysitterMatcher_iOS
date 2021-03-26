@@ -91,19 +91,15 @@ class CertificateTVC: UITableViewController {
                             } else if result == 2 {
                                 status = "一般會員"
                                 cell.lbStatus.textColor = .blue
-
                             } else if result == 3 {
                                 status = "保母會員"
                                 cell.lbStatus.textColor = .orange
-
                             } else if result == 5 {
                                 status = "停權"
                                 cell.lbStatus.textColor = .red
-
                             } else if result == 6 {
                                 status = "審核中保母"
                                 cell.lbStatus.textColor = .systemPink
-
                             }
                             
                             print("status: \(String(describing: status))")

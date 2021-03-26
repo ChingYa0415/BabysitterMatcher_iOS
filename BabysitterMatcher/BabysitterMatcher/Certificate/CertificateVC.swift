@@ -58,13 +58,19 @@ class CertificateVC: UIViewController {
                         DispatchQueue.main.async {
                             self.lbName.text = self.babysitter?.name
                             self.lbAge.text = String((self.babysitter?.age)!)
-                            self.lbGender.text = String((self.babysitter?.gender)!)
+                            if self.babysitter?.gender == 0 {
+                                self.lbGender.text = "男"
+                            } else if self.babysitter?.gender == 1 {
+                                self.lbGender.text = "女"
+                            } else if self.babysitter?.gender == 2 {
+                                self.lbGender.text = "其他"
+                            }
                             self.lbCellphone.text = self.babysitter?.cellphone
-                            if self.babysitter?.seniority == 1 {
+                            if self.babysitter?.seniority == 0 {
                                 self.lbSeniority.text = "5年以下"
-                            } else if self.babysitter?.seniority == 2 {
+                            } else if self.babysitter?.seniority == 1 {
                                 self.lbSeniority.text = "5~10年"
-                            } else if self.babysitter?.seniority == 3 {
+                            } else if self.babysitter?.seniority == 2 {
                                 self.lbSeniority.text = "10年以上"
                             }
                             self.lbCity.text = self.babysitter?.city
